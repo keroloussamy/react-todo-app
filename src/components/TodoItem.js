@@ -6,6 +6,10 @@ class TodoItem extends React.Component {
     editing: false,
   }
 
+  componentWillUnmount() { //will be called when item is deleted.
+    console.log("Cleaning up...")
+  }
+
   handleEditing = () => {
     this.setState({
       editing: true,
@@ -17,7 +21,7 @@ class TodoItem extends React.Component {
       this.setState({ editing: false })
     }
   }
-  
+
   render() {
     const completedStyle = {
       fontStyle: "italic",
